@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<templates>
+<template 
+	autoinsert="true" 
+	context="php.ware.Entity.Entity" 
+	deleted="false" 
+	description="template for an Abstract Entity" 
+	enabled="true" 
+	name="aent">abstract entity ${name} {
+${cursor}
+}</template>
+<template 
+	autoinsert="true" 
+	context="php.ware.Entity.Attribute" 
+	deleted="false" 
+	description="template for an Attribute" 
+	enabled="true" 
+	id="php.ware.Entity.Attribute" 
+	name="attr">${attrName} : ${attrType:CrossReference('TypeRef.referenced')}</template>
+<template 
+	autoinsert="true" 
+	context="php.ware.Entity.DataType" 
+	deleted="false" 
+	description="template for a DataType" 
+	enabled="true" 
+	id="php.ware.Entity.DataType" 
+	name="dat">datatype ${name} maps ${langSpecific}</template>
+<template 
+	autoinsert="true" 
+	context="php.ware.Entity.Entity" 
+	deleted="false" 
+	description="template for an Entity" 
+	enabled="true" 
+	id="php.ware.Entity.Entity" 
+	name="ent">entity ${name} {
+${cursor}
+}</template>
+<template 
+	autoinsert="true" 
+	context="php.ware.Entity.Entity" 
+	deleted="false" 
+	description="template for an inherited Entity" 
+	enabled="true" 
+	name="ient">entity ${name} extends ${superType} {
+${cursor}
+}</template>
+<template 
+	autoinsert="true" 
+	context="php.ware.Entity.Operation" 
+	deleted="false" 
+	description="template for an Operation" 
+	enabled="true" 
+	id="php.ware.Entity.Operation" 
+	name="met">${visibility:Enum('Visibility')} op ${name} (${paramName1} ${paramType1:CrossReference('TypeRef.referenced')}) : ${type:CrossReference('TypeRef.referenced')}</template>
+<template 
+	autoinsert="true" 
+	context="php.ware.Entity.Package" 
+	deleted="false" 
+	description="template for a Package" 
+	enabled="true" 
+	id="php.ware.Entity.Package" 
+	name="Package">package ${name} {
+${cursor}
+}</template>
+<template 
+	autoinsert="true" 
+	context="php.ware.Entity.Reference" 
+	deleted="false" description="template for a Reference" 
+	enabled="true" 
+	id="php.ware.Entity.Reference" 
+	name="ref">ref  ${refName}  : ${refType:CrossReference('TypeRef.referenced')}</template>
+</templates>
