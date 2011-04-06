@@ -4,6 +4,11 @@
 package php.ware.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
+import org.eclipse.xtext.ui.editor.syntaxcoloring.antlr.AbstractAntlrTokenToAttributeIdMapper;
+
+import php.ware.ui.syntaxcoloring.EntityAntlrTokenToAttributeIdMapper;
+import php.ware.ui.syntaxcoloring.EntityHighlightingConfiguration;
 
 /**
  * Use this class to register components to be used within the IDE.
@@ -11,5 +16,19 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 public class EntityUiModule extends php.ware.ui.AbstractEntityUiModule {
     public EntityUiModule(AbstractUIPlugin plugin) {
         super(plugin);
+    }
+
+    /**
+     * Configuration for Lexical Highlight
+     */
+    public Class<? extends IHighlightingConfiguration> bindILexicalHighlightingConfiguration() {
+        return EntityHighlightingConfiguration.class;
+    }
+
+    /**
+     * Token to Attribute maps for Lexical Highlight
+     */
+    public Class<? extends AbstractAntlrTokenToAttributeIdMapper> bindAntlrTokenToAttributeIdMapper() {
+        return EntityAntlrTokenToAttributeIdMapper.class;
     }
 }
