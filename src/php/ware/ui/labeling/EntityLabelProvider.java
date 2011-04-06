@@ -60,7 +60,16 @@ public class EntityLabelProvider extends DefaultEObjectLabelProvider {
 
         // is abstract?
         if (ele.isIsAbstract()) {
+            if (ele.getFeatures().size() == 0) {
+                ss.append(ele.getName(), this.getEmptyEntityStyler());
+                return ss;
+            }
             ss.append(ele.getName(), StyledString.COUNTER_STYLER);
+            return ss;
+        }
+
+        if (ele.getFeatures().size() == 0) {
+            ss.append(ele.getName(), this.getEmptyEntityStyler());
             return ss;
         }
 
@@ -222,6 +231,23 @@ public class EntityLabelProvider extends DefaultEObjectLabelProvider {
 
         ts.setStyle(SWT.NORMAL);
         ts.setColor(new RGB(255, 168, 35));
+        ts.setBackgroundColor(new RGB(255, 255, 255));
+
+        return sf.createXtextStyleAdapterStyler(ts);
+    }
+
+    /**
+     * Return {@link Styler} object for styling some symbols.
+     * 
+     * @return {@link Styler}
+     */
+    protected Styler getEmptyEntityStyler() {
+
+        StylerFactory sf = new StylerFactory();
+        TextStyle ts = new TextStyle();
+
+        ts.setStyle(SWT.NORMAL);
+        ts.setColor(new RGB(207, 207, 207));
         ts.setBackgroundColor(new RGB(255, 255, 255));
 
         return sf.createXtextStyleAdapterStyler(ts);
