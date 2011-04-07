@@ -5,7 +5,8 @@
 	context="php.ware.Entity.Entity" 
 	deleted="false" 
 	description="template for an Abstract Entity" 
-	enabled="true" 
+	enabled="true"
+	id="aent" 
 	name="aent">abstract entity ${name} {
 ${cursor}
 }</template>
@@ -41,6 +42,7 @@ ${cursor}
 	deleted="false" 
 	description="template for an inherited Entity" 
 	enabled="true" 
+	id="ient"
 	name="ient">entity ${name} extends ${superType} {
 ${cursor}
 }</template>
