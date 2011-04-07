@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: php.ware.entity.ui
-Bundle-Vendor: My Company
+Bundle-Vendor: cid
 Bundle-Version: 1.0.0
 Bundle-SymbolicName: php.ware.entity.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
@@ -12,8 +12,10 @@ Require-Bundle: php.ware.entity;visibility:=reexport,
  org.eclipse.xtext.ui.shared,
  org.eclipse.ui,
  org.eclipse.xtext.builder,
- org.antlr.runtime
+ org.antlr.runtime,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: php.ware.ui.contentassist.antlr
 Bundle-Activator: php.ware.ui.internal.EntityActivator
